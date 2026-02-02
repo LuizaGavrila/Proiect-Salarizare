@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Aplicatie_Salarizare_Proiect.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Proiect Salarizare</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        /* Header-ul albastru din poza */
+        .header-blue {
+            background-color: #4A76A8;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 150px;
+        }
+        /* Zona de text si ceas din mijloc */
+        .header-text { text-align: center; flex-grow: 1; }
+        /* Imaginile de reclama din dreapta */
+        .header-images img { width: 120px; height: 90px; margin-left: 10px; border: 1px solid white; }
+        
+        /* Meniul orizontal gri inchis de sub header */
+        .nav-bar { background-color: #445a6d; padding: 0; margin: 0; }
+        .nav-bar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .nav-bar li { position: relative; }
+        .nav-bar a { color: white; padding: 10px 20px; text-decoration: none; display: block; border-right: 1px solid #555; font-size: 14px; }
+        .nav-bar a:hover { background-color: #556d82; }
+
+        .main-content { padding: 40px; }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />
+
+        <div class="header-blue">
+            <div class="header-text">
+                <h2>PROIECT ASP.NET APLICATIE SALARIZARE - GAVRILA LUIZA</h2>
+                <asp:UpdatePanel ID="upClock" runat="server">
+                    <ContentTemplate>
+                        <h3><asp:Label ID="lblCeas" runat="server"></asp:Label></h3>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+            <div class="header-images">
+                <img src="flori1.jpg" alt="Imagine 1" />
+                <img src="flori2.jpg" alt="Imagine 2" />
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <ul>
+                <li><a href="Home.aspx">Home</a></li>
+                <li><a href="IntroducereDate.aspx">Introducere date</a></li>
+                <li><a href="Rapoarte.aspx">Rapoarte</a></li>
+                <li><a href="Procente.aspx">Procente</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
